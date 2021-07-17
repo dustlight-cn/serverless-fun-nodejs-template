@@ -1,0 +1,52 @@
+# Welcome to Serverless!
+#
+# For full config options, check the kubeless plugin docs:
+#    https://github.com/serverless/serverless-kubeless
+#
+# For documentation on kubeless itself:
+#    http://kubeless.io
+
+# Update the service name below with your own service name
+service: hello
+
+frameworkVersion: '2'
+
+# Please ensure the serverless-kubeless provider plugin is installed globally.
+# $ npm install -g serverless-kubeless
+#
+# ...before installing project dependencies to register this provider.
+# $ npm install
+
+provider:
+  name: kubeless
+  runtime: nodejs14
+  namespace: functions
+  memorySize: 512M
+  timeout: 10
+  ingress:
+    class: 'kong'
+  deploy:
+    strategy: S3ZipContent
+    options:
+      accessKeyId: 92GYTM1U7M76OQO740BW
+      secretAccessKey: l1ezn4IgqG61ClxSmrwQOXMHVHqCya5YiJk3hDL1
+      endpoint: http://oss.wgv
+      bucket: functions
+      region: gz-wgv
+      s3ForcePathStyle: true
+plugins:
+  - serverless-kubeless
+  - serverless-kubeless-offline-win
+
+package:
+  exclude:
+    - src/**
+    - package-lock.json
+
+functions:
+  hello:
+    handler: sl_handler.handler
+    events:
+      - http:
+          path: /hello
+          hostname: 'functions.wgv'
