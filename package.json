@@ -14,7 +14,8 @@
     "dev": "set mode=development && tsc --build tsconfig.json && serverless offline start",
     "build": "set mode=production && tsc --build tsconfig.json",
     "package": "set mode=production && tsc --build tsconfig.json && serverless package",
-    "deploy": "set mode=production  && tsc --build tsconfig.json && serverless deploy"
+    "deploy": "set mode=production  && tsc --build tsconfig.json && serverless deploy",
+    "remove": "serverless remove"
   },
   "repository": {
     "type": "git",
