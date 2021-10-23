@@ -1,4 +1,4 @@
-# Serverless-Kubeless Template for NodeJs
+# Serverless-Fun Template for NodeJs
 
 ## 简介
 此项目为 Serverless Framework 在 Fun 环境下的 NodeJs 模板。
