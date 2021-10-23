@@ -18,35 +18,14 @@ frameworkVersion: '2'
 # $ npm install
 
 provider:
-  name: kubeless
+  name: fun
+  handler: sl_handler.handler
   runtime: nodejs14
-  namespace: functions
-  memorySize: 512M
-  timeout: 10
-  ingress:
-    class: 'kong'
-  deploy:
-    strategy: S3ZipContent
-    options:
-      accessKeyId: 92GYTM1U7M76OQO740BW
-      secretAccessKey: l1ezn4IgqG61ClxSmrwQOXMHVHqCya5YiJk3hDL1
-      endpoint: http://oss.wgv
-      bucket: functions
-      region: gz-wgv
-      s3ForcePathStyle: true
 plugins:
-  - serverless-kubeless
+  - serverless-fun
   - serverless-kubeless-offline-win
 
 package:
   exclude:
     - src/**
     - package-lock.json
-
-functions:
-  hello:
-    handler: sl_handler.handler
-    events:
-      - http:
-          path: /hello
-          hostname: 'functions.wgv'
