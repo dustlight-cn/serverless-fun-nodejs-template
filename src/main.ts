@@ -1,4 +1,4 @@
-import { Event } from "./core/Event";
+import { Event } from "./core/event";
 
 /**
  * 初始化钩子
