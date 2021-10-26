@@ -4,7 +4,7 @@
   "description": "demo",
   "private": true,
   "dependencies": {
-    "serverless-fun": "^0.0.1-alpha-1",
+    "serverless-fun": "0.0.2-alpha",
     "typescript": "^4.3.5"
   },
   "engines": {
