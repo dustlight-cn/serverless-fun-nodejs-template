@@ -24,13 +24,32 @@ exports.handler = async (event, context) => {
     }
 
     if (typeof result == "object")
-      return JSON.stringify(result)
+      return JSON.stringify({
+        "result": "COMPLETE",
+        "variables": result
+      })
     if (result == null)
-      return ""
-    return result
+      return JSON.stringify({
+        "result": "COMPLETE",
+        "variables": null
+      })
+    return JSON.stringify({
+      "result": "COMPLETE",
+      "variables": {
+        "result": result
+      }
+    })
   } catch (e) {
     console.error(e);
+    if (e.type == "FAIL") {
+      return JSON.stringify({
+        "result": "FAIL",
+        "errorMessage": e.message,
+        "retires": e.retires
+      })
+    }
     return JSON.stringify({
+      "result": "ERROR",
       "errorCode": e.code || 0,
       "errorMessage": e.message
     })

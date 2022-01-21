@@ -20,9 +20,10 @@ function init(config: any) {
 function main(event: Event, context: any, config: any): any {
     let result = {}
     result["date"] = new Date()
-    result["event.data"] = event.data;
-    result["context"] = context;
-    return result;
+    result["event.data"] = event.data
+    result["query"] = event.extensions.request.query
+    result["context"] = context
+    return result
 }
 
 export {

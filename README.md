@@ -6,7 +6,7 @@
 使用此模板您可以快速地使用 NodeJs 开发无服务器云函数。
 
 ## 快速入门
-> 在此之前您需要拥有应用，[前往创建](https://accounts.wgv.ink/clients/new) 或者 [选择应用](https://accounts.wgv.ink/clients)。
+> 在此之前您需要拥有应用，[前往创建](https://accounts.dustlight.cn/clients/new) 或者 [选择应用](https://accounts.dustlight.cn/clients)。
 > 
 > 开发环境要求安装 NodeJs。
 
@@ -17,7 +17,7 @@
 
 克隆项目：
 
-```git clone https://codeup.aliyun.com/60af7c922c5969c370c5a518/serverless/nodejs-template.git```
+```git clone https://github.com/dustlight-cn/serverless-fun-nodejs-template.git```
 
 ### 安装依赖
 
@@ -31,6 +31,7 @@
 FUN_CLIENT_ID=<您的 ClientID>
 FUN_CLIENT_SECRET=<您的 ClientSecret>
 ```
+
 
 ### 运行调试
 
@@ -49,6 +50,6 @@ FUN_CLIENT_SECRET=<您的 ClientSecret>
 
 打开浏览器，输入地址：
 
-```http://<ClientID>.functions.wgv.ink/hello?xx=xx```
+```http://<ClientID>.fun.dustlight.cn/hello?xx=xx```
 
 
