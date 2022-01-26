@@ -4,7 +4,7 @@
   "description": "Demo project for serverless-fun",
   "private": true,
   "dependencies": {
-    "@dustlight/serverless-fun": "0.0.2-alpha-dev-1",
+    "@dustlight/serverless-fun": "0.0.3-alpha",
     "typescript": "^4.3.5"
   },
   "engines": {
@@ -24,7 +24,7 @@
   "author": "Hansin1997",
   "license": "MIT",
   "devDependencies": {
-    "@dustlight/serverless-fun-offline": "0.0.2-alpha-dev-1",
+    "@dustlight/serverless-fun-offline": "0.0.3-alpha",
     "@types/node": "^16.3.2"
   }
 }
